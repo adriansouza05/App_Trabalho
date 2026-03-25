@@ -1,3 +1,4 @@
-# app_trabalho
+# App_Trabalho
 
-A new Flutter project.
+Escrever aqui o que o app faz e colocar as
+informações necessárias depois da criação...
