@@ -1,7 +1,8 @@
 # App_Trabalho
 
-Escrever aqui o que o app faz e colocar as
-informações necessárias depois da criação...
+Escrever aqui o que o app faz e colocar as informações necessárias depois da criação...
+
+---
 
 ## ⚙️ Instalação das Dependências
 
@@ -19,24 +20,25 @@ flutter pub add fluttertoast
 flutter pub add http
 ```
 
+---
+
+## 🚀 Como Clonar o Repositório
+```bash
 # Clonar (só uma vez)
 git clone https://github.com/usuario/repositorio.git
-
-# Pegar as atualizações quando alguém modificar algo
-git pull
-
-# Enviar suas modificações
-git add .
-git commit -m "descrição do que fez"
-git push
 ```
 
 ---
 
-**Fluxo básico do dia a dia:**
-```
-git pull        ← sempre antes de começar a trabalhar
-  (faz as modificações no código)
+## 🔄 Fluxo básico do dia a dia
+```bash
+git pull                        # sempre antes de começar a trabalhar
+
+# (faz as modificações no código)
+
 git add .
-git commit -m "mensagem"
-git push        ← envia para o GitHub
+git commit -m "descrição do que fez"
+git push                        # envia para o GitHub
+```
+
+> ⚠️ Sempre dê `git pull` antes de começar a codar para evitar conflitos!
