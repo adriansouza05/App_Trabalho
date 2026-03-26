@@ -8,6 +8,12 @@ flutter pub get
 flutter pub upgrade
 flutter pub add device_preview
 flutter pub add get_it
+flutter pub add cupertino_icons
+flutter pub add provider
+flutter pub add shared_preferences
+flutter pub add intl
+flutter pub add fluttertoast
+flutter pub add http
 
 # Clonar (só uma vez)
 git clone https://github.com/usuario/repositorio.git
