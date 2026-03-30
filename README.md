@@ -13,6 +13,7 @@
 - [Dependências Flutter](#-dependências-flutter)
 - [Correção de Erros de Compilação](#-correção-de-erros-de-compilação)
 - [Comandos Úteis Flutter](#-comandos-úteis-flutter)
+- [Device Preview](#-device-preview)
 
 ---
 
@@ -245,12 +246,57 @@ flutter build appbundle --release
 
 ---
 
+## 📱 Device Preview
+
+O projeto utiliza o pacote [`device_preview_plus`](https://pub.dev/packages/device_preview_plus) para visualizar o app em diferentes tamanhos de tela diretamente no navegador ou desktop.
+
+### Configuração no `main.dart`
+
+```dart
+import 'package:flutter/material.dart';
+import 'package:device_preview_plus/device_preview_plus.dart';
+import 'package:flutter_application_1/pages/splash_page.dart';
+
+void main() {
+  runApp(
+    DevicePreview(
+      enabled: true, // ← muda para false antes de gerar o APK final
+      builder: (context) => const MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      useInheritedMediaQuery: true,
+      locale: DevicePreview.locale(context),
+      builder: DevicePreview.appBuilder,
+      home: const SplashPage(),
+    );
+  }
+}
+```
+
+### O que o Device Preview permite
+- Simular diferentes modelos de celular e tablet
+- Alternar entre orientação retrato e paisagem
+- Testar diferentes tamanhos de fonte do sistema
+- Verificar o layout em telas pequenas e grandes
+
+> ⚠️ **Importante:** antes de gerar o APK para produção, defina `enabled: false` no `DevicePreview`.
+
+---
+
 ## 👥 Colaboradores
 
-| Nome | GitHub |
-|------|--------|
-|Adrian|adriansouza05|
-|Gabriel|Noluvvvv|
+| Nome    | GitHub |
+|---------|--------|
+| Adrian  | [@adriansouza05](https://github.com/adriansouza05) |
+| Gabriel | [@Noluvvvv](https://github.com/Noluvvvv) |
 
 ---
 
