@@ -249,7 +249,8 @@ flutter build appbundle --release
 
 | Nome | GitHub |
 |------|--------|
-| —    | —      |
+|Adrian|adriansouza05|
+|Gabriel|Noluvvvv|
 
 ---
 
