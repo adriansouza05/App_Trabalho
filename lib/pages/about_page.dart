@@ -81,7 +81,7 @@ class AboutPage extends StatelessWidget {
             ),
             const SizedBox(height: 12),
             const Text(
-              "• Adrian S. Teixeira\n• Gabriel Lopes",
+              "• Adrian Teixeira\n• Gabriel Lopes",
               style: TextStyle(
                 fontSize: 15,
                 color: AppTheme.white,
