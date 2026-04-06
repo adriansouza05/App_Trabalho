@@ -81,7 +81,7 @@ class AboutPage extends StatelessWidget {
             ),
             const SizedBox(height: 12),
             const Text(
-              "• Seu Nome Aqui\n• Nome da Dupla Aqui",
+              "• Adrian S. Teixeira\n• Gabriel Lopes",
               style: TextStyle(
                 fontSize: 15,
                 color: AppTheme.white,
@@ -90,7 +90,7 @@ class AboutPage extends StatelessWidget {
             ),
             const Spacer(),
             const Text(
-              "Disciplina: Desenvolvimento Multiplataforma\nInstituição: Nome da Faculdade",
+              "Disciplina: Dispositivos Móveis\nInstituição: FATEC-RP",
               style: TextStyle(
                 fontSize: 13,
                 color: AppTheme.textMuted,
