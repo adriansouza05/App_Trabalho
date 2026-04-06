@@ -26,15 +26,24 @@ class _SplashPageState extends State<SplashPage>
     );
 
     _fadeAnim = Tween<double>(begin: 0, end: 1).animate(
-      CurvedAnimation(parent: _controller, curve: const Interval(0, 0.6, curve: Curves.easeOut)),
+      CurvedAnimation(
+        parent: _controller,
+        curve: const Interval(0, 0.6, curve: Curves.easeOut),
+      ),
     );
 
     _scaleAnim = Tween<double>(begin: 0.85, end: 1).animate(
-      CurvedAnimation(parent: _controller, curve: const Interval(0, 0.7, curve: Curves.easeOut)),
+      CurvedAnimation(
+        parent: _controller,
+        curve: const Interval(0, 0.7, curve: Curves.easeOut),
+      ),
     );
 
     _slideAnim = Tween<double>(begin: 30, end: 0).animate(
-      CurvedAnimation(parent: _controller, curve: const Interval(0.2, 0.8, curve: Curves.easeOut)),
+      CurvedAnimation(
+        parent: _controller,
+        curve: const Interval(0.2, 0.8, curve: Curves.easeOut),
+      ),
     );
 
     _controller.forward();
@@ -44,8 +53,9 @@ class _SplashPageState extends State<SplashPage>
       Navigator.pushReplacement(
         context,
         PageRouteBuilder(
-          pageBuilder: (_, __, ___) => const LoginPage(),
-          transitionsBuilder: (_, anim, __, child) =>
+          pageBuilder: (ctx, animation, secondaryAnimation) =>
+              const LoginPage(),
+          transitionsBuilder: (ctx, anim, secondaryAnim, child) =>
               FadeTransition(opacity: anim, child: child),
           transitionDuration: const Duration(milliseconds: 500),
         ),
@@ -67,21 +77,21 @@ class _SplashPageState extends State<SplashPage>
         children: [
           // Red accent top bar
           Positioned(
-            top: 0, left: 0, right: 0,
+            top: 0,
+            left: 0,
+            right: 0,
             child: Container(
               height: 4,
               decoration: const BoxDecoration(gradient: AppTheme.redGradient),
             ),
           ),
           // Background grid pattern
-          Positioned.fill(
-            child: CustomPaint(painter: _GridPainter()),
-          ),
+          Positioned.fill(child: CustomPaint(painter: _GridPainter())),
           // Center content
           Center(
             child: AnimatedBuilder(
               animation: _controller,
-              builder: (_, __) => FadeTransition(
+              builder: (ctx, child) => FadeTransition(
                 opacity: _fadeAnim,
                 child: Transform.scale(
                   scale: _scaleAnim.value,
@@ -147,10 +157,12 @@ class _SplashPageState extends State<SplashPage>
           ),
           // Bottom loading bar
           Positioned(
-            bottom: 60, left: 40, right: 40,
+            bottom: 60,
+            left: 40,
+            right: 40,
             child: AnimatedBuilder(
               animation: _controller,
-              builder: (_, __) => Column(
+              builder: (ctx, child) => Column(
                 children: [
                   Text(
                     'CARREGANDO...',
@@ -191,5 +203,5 @@ class _GridPainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(_) => false;
+  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
 }

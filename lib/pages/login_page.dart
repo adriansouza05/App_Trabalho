@@ -42,7 +42,7 @@ class _LoginPageState extends State<LoginPage> {
 
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (_) => const HomePage()),
+        MaterialPageRoute(builder: (ctx) => const HomePage()),
       );
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
@@ -128,10 +128,12 @@ class _LoginPageState extends State<LoginPage> {
                     prefixIcon: Icon(Icons.email, color: AppTheme.textMuted),
                   ),
                   validator: (value) {
-                    if (value == null || value.isEmpty)
+                    if (value == null || value.isEmpty) {
                       return "Informe seu e-mail";
-                    if (!value.contains("@"))
+                    }
+                    if (!value.contains("@")) {
                       return "Formato de e-mail inválido";
+                    }
                     return null;
                   },
                 ),
@@ -145,10 +147,12 @@ class _LoginPageState extends State<LoginPage> {
                     prefixIcon: Icon(Icons.lock, color: AppTheme.textMuted),
                   ),
                   validator: (value) {
-                    if (value == null || value.isEmpty)
+                    if (value == null || value.isEmpty) {
                       return "Informe sua senha";
-                    if (value.length < 6)
+                    }
+                    if (value.length < 6) {
                       return "A senha deve ter no mínimo 6 caracteres";
+                    }
                     return null;
                   },
                 ),
@@ -159,7 +163,7 @@ class _LoginPageState extends State<LoginPage> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (_) => const ForgotPasswordPage(),
+                          builder: (ctx) => const ForgotPasswordPage(),
                         ),
                       );
                     },
@@ -187,7 +191,7 @@ class _LoginPageState extends State<LoginPage> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (_) => const RegisterPage()),
+                      MaterialPageRoute(builder: (ctx) => const RegisterPage()),
                     );
                   },
                   child: const Text(

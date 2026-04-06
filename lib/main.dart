@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:device_preview_plus/device_preview_plus.dart';
 import 'package:provider/provider.dart';
 import 'providers/auth_provider.dart';
-import 'pages/login_page.dart';
-import 'app_theme.dart'; // ← Importação do ficheiro de tema adicionada aqui
+import 'pages/splash_page.dart'; // ← Importação corrigida para a Splash Page
+import 'app_theme.dart';
 
 void main() {
   runApp(
     MultiProvider(
-      providers: [ChangeNotifierProvider(create: (_) => AuthProvider())],
+      providers: [ChangeNotifierProvider(create: (ctx) => AuthProvider())],
       child: DevicePreview(
         enabled: true, // ← mude para false ao gerar o APK final
-        builder: (context) => const MyApp(),
+        builder: (ctx) => const MyApp(),
       ),
     ),
   );
@@ -24,13 +24,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      useInheritedMediaQuery: true, // Necessário para o DevicePreview
       locale: DevicePreview.locale(context),
       builder: DevicePreview.appBuilder,
       title: 'Titanium Gym',
-      // Aplica o tema diretamente da classe que criaste noutro ficheiro:
       theme: AppTheme.theme,
-      home: const LoginPage(),
+      home: const SplashPage(), // ← AGORA O APP INICIA PELA SPLASH PAGE
     );
   }
 }

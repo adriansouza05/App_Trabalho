@@ -58,7 +58,10 @@ class _CommentsPageState extends State<CommentsPage> {
               children: [
                 Text('COMUNIDADE', style: AppTheme.labelUpper),
                 const SizedBox(height: 4),
-                const Text('Compartilhe sua evolução', style: AppTheme.headingMedium),
+                const Text(
+                  'Compartilhe sua evolução',
+                  style: AppTheme.headingMedium,
+                ),
                 const SizedBox(height: 20),
               ],
             ),
@@ -95,7 +98,10 @@ class _CommentsPageState extends State<CommentsPage> {
                 GestureDetector(
                   onTap: _adicionar,
                   child: Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 20,
+                      vertical: 10,
+                    ),
                     decoration: BoxDecoration(
                       gradient: AppTheme.redGradient,
                       borderRadius: BorderRadius.circular(8),
@@ -105,10 +111,13 @@ class _CommentsPageState extends State<CommentsPage> {
                       children: [
                         Icon(Icons.send, color: AppTheme.white, size: 16),
                         SizedBox(width: 8),
-                        Text('PUBLICAR',
+                        Text(
+                          'PUBLICAR',
                           style: TextStyle(
-                            color: AppTheme.white, fontSize: 13,
-                            fontWeight: FontWeight.w800, letterSpacing: 1,
+                            color: AppTheme.white,
+                            fontSize: 13,
+                            fontWeight: FontWeight.w800,
+                            letterSpacing: 1,
                           ),
                         ),
                       ],
@@ -128,13 +137,21 @@ class _CommentsPageState extends State<CommentsPage> {
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        const Icon(Icons.chat_bubble_outline,
-                          color: AppTheme.borderGrey, size: 48),
+                        const Icon(
+                          Icons.chat_bubble_outline,
+                          color: AppTheme.borderGrey,
+                          size: 48,
+                        ),
                         const SizedBox(height: 12),
-                        Text('Nenhum comentário ainda',
-                          style: AppTheme.caption.copyWith(fontSize: 14)),
+                        Text(
+                          'Nenhum comentário ainda',
+                          style: AppTheme.caption.copyWith(fontSize: 14),
+                        ),
                         const SizedBox(height: 4),
-                        Text('Seja o primeiro a compartilhar!', style: AppTheme.caption),
+                        Text(
+                          'Seja o primeiro a compartilhar!',
+                          style: AppTheme.caption,
+                        ),
                       ],
                     ),
                   )
@@ -142,8 +159,9 @@ class _CommentsPageState extends State<CommentsPage> {
                     controller: _scroll,
                     padding: const EdgeInsets.fromLTRB(24, 0, 24, 24),
                     itemCount: _comentarios.length,
-                    separatorBuilder: (_, __) => const SizedBox(height: 10),
-                    itemBuilder: (_, index) {
+                    separatorBuilder: (ctx, index) =>
+                        const SizedBox(height: 10),
+                    itemBuilder: (ctx, index) {
                       final c = _comentarios[index];
                       return Container(
                         padding: const EdgeInsets.all(16),
@@ -156,12 +174,17 @@ class _CommentsPageState extends State<CommentsPage> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Container(
-                              width: 36, height: 36,
+                              width: 36,
+                              height: 36,
                               decoration: BoxDecoration(
                                 gradient: AppTheme.redGradient,
                                 borderRadius: BorderRadius.circular(10),
                               ),
-                              child: const Icon(Icons.person, color: AppTheme.white, size: 18),
+                              child: const Icon(
+                                Icons.person,
+                                color: AppTheme.white,
+                                size: 18,
+                              ),
                             ),
                             const SizedBox(width: 12),
                             Expanded(
@@ -170,9 +193,11 @@ class _CommentsPageState extends State<CommentsPage> {
                                 children: [
                                   Row(
                                     children: [
-                                      const Text('Atleta',
+                                      const Text(
+                                        'Atleta',
                                         style: TextStyle(
-                                          color: AppTheme.white, fontSize: 13,
+                                          color: AppTheme.white,
+                                          fontSize: 13,
                                           fontWeight: FontWeight.w700,
                                         ),
                                       ),
@@ -181,9 +206,11 @@ class _CommentsPageState extends State<CommentsPage> {
                                     ],
                                   ),
                                   const SizedBox(height: 6),
-                                  Text(c['text']!,
+                                  Text(
+                                    c['text']!,
                                     style: const TextStyle(
-                                      color: AppTheme.offWhite, fontSize: 14,
+                                      color: AppTheme.offWhite,
+                                      fontSize: 14,
                                       height: 1.4,
                                     ),
                                   ),
