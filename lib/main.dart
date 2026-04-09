@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       locale: DevicePreview.locale(context),
       builder: DevicePreview.appBuilder,
-      title: 'Titanium Gym',
+      title: 'Science Lifter',
       theme: AppTheme.theme,
       home: const SplashPage(), // ← AGORA O APP INICIA PELA SPLASH PAGE
     );
